@@ -48,26 +48,24 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getShipmentById, assignTransporter } from '../api/shipments'
-import type { Shipment, Transporter } from '../types/shipment'
 import { useNotify } from '../composables/useNotify'
 import DetailShipment from '../components/Shipment/Detail.vue'
-
-const route = useRoute()
-const shipment = ref<Shipment>()
-const loading = ref(true)
-const selectedTransporter = ref<string | null>(null)
-const message = ref<{ type: 'success' | 'error'; text: string } | null>(null)
+import { useShipmentStore } from '../store/shipment'
+import { storeToRefs } from 'pinia'
 
 const { showNotify } = useNotify()
 const router = useRouter()
-const transporterOptions: Transporter[] = [
-  { id: 'trp-101', name: 'PT JEJE Transindo' },
-  { id: 'trp-202', name: 'Logistik Nusantara' },
-  { id: 'trp-303', name: 'Cipta Ekspedisi' },
-]
+const route = useRoute()
+const {
+  shipment, 
+  selectedTransporter, 
+  message, 
+  loading} = storeToRefs(useShipmentStore())
+
+const { transporterOptions } = useShipmentStore()
 
 const fetchShipment = async () => {
   try {

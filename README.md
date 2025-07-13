@@ -13,6 +13,22 @@ A simple web-based shipment tracking interface built with Vue 3 (Composition API
 - [Mirage](https://miragejs.com/) - Mock API
 
 ---
+## 📁 Project Structure
+
+src/
+── assets/ # Static files like icons or images
+── api/ # API service layer (e.g., abstracted HTTP calls)
+── components/ # Reusable Vue components (buttons, tables, etc.)
+── composable/ # Reusable logic using the Composition API
+── layout/ # Shared layout components (e.g., Header, Container)
+── mirage/ # MirageJS setup for local API mocking
+── mock/ # Static mock data (e.g., JSON, initial data)
+── pages/ # Route-level components (Shipment List, Detail)
+── store/ # Pinia store modules
+── types/ # Global TypeScript types and interfaces
+── utils/ # Utility functions/helpers
+── App.vue # Root Vue component
+── main.ts # Application entry point
 
 ## 🚀 Features
 
