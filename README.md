@@ -10,6 +10,7 @@ A simple web-based shipment tracking interface built with Vue 3 (Composition API
 - [Pinia](https://pinia.vuejs.org/) – State management
 - [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS
 - [Vite](https://vitejs.dev/) – Build tool
+- [Mirage](https://miragejs.com/) - Mock API
 
 ---
 
